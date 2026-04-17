@@ -1,0 +1,662 @@
+{
+  "acceptance_passed": true,
+  "acceptance_tests": {
+    "1": {
+      "detail": "all used files are Noload only",
+      "name": "Scope integrity",
+      "passed": true
+    },
+    "10": {
+      "detail": "dataset_size_warning is present and exact",
+      "name": "Branch-A sanity",
+      "passed": true
+    },
+    "11": {
+      "detail": "extrapolation only: imb_10pct_estimate=0.027887637076, imb_threshold=0.019549807663, neg_10pct_estimate=0.012292348376, neg_threshold=0.008041767890",
+      "name": "10% extrapolation sanity",
+      "passed": true
+    },
+    "2": {
+      "detail": "LOFO folds keep held-out files out of training",
+      "name": "File-level split integrity",
+      "passed": true
+    },
+    "3": {
+      "detail": "feature count is 38",
+      "name": "Feature count",
+      "passed": true
+    },
+    "4": {
+      "detail": "update() only accepts RMS triples and returns the expected states",
+      "name": "No raw-sample leakage",
+      "passed": true
+    },
+    "5": {
+      "detail": "feature extractor enforces input shape (n, 3)",
+      "name": "No I4 leakage",
+      "passed": true
+    },
+    "6": {
+      "detail": "reported 5%+ recall=1.0, healthy FPR=0.0, reported 3% recall=0.0, reported 1% FPR=0.8198529411764706",
+      "name": "Recall / precision targets on the evaluation set",
+      "passed": true
+    },
+    "7": {
+      "detail": "model.joblib is 1036 bytes",
+      "name": "Model size on disk",
+      "passed": true
+    },
+    "8": {
+      "detail": "median latency 0.161562 ms",
+      "name": "Per-triple inference cost on dev machine",
+      "passed": true
+    },
+    "9": {
+      "detail": "sha256=35c1cdfd4360d12b80f100e8b1277b1beb894665301c505e90e7683b799dc355",
+      "name": "Determinism",
+      "passed": true
+    }
+  },
+  "branch": "A",
+  "data_dir": "/Users/aniruddh/Desktop/rpi",
+  "dataset_size_warning": "Dataset has n_files=4 no-load files; evaluation is LOFO-CV. Add more files for held-out test reporting.",
+  "determinism_sha256": "35c1cdfd4360d12b80f100e8b1277b1beb894665301c505e90e7683b799dc355",
+  "evaluation": {
+    "confusion_matrix": {
+      "fn": 272,
+      "fp": 223,
+      "tn": 321,
+      "tp": 272
+    },
+    "per_severity": {
+      "1%": {
+        "fn": 0,
+        "fp": 223,
+        "fpr": 0.8198529411764706,
+        "n": 272,
+        "recall": null,
+        "tn": 49,
+        "tp": 0
+      },
+      "3%": {
+        "fn": 272,
+        "fp": 0,
+        "fpr": null,
+        "n": 272,
+        "recall": 0.0,
+        "tn": 0,
+        "tp": 0
+      },
+      "5%+": {
+        "fn": 0,
+        "fp": 0,
+        "fpr": null,
+        "n": 272,
+        "recall": 1.0,
+        "tn": 0,
+        "tp": 272
+      },
+      "healthy": {
+        "fn": 0,
+        "fp": 0,
+        "fpr": 0.0,
+        "n": 272,
+        "recall": null,
+        "tn": 272,
+        "tp": 0
+      }
+    }
+  },
+  "evaluation_name": "pooled_lofo_cv",
+  "excluded_files": [],
+  "feature_names": [
+    "mean_rms.mean",
+    "mean_rms.std",
+    "mean_rms.min",
+    "mean_rms.max",
+    "mean_rms.p2p",
+    "mean_rms.cv",
+    "ratio_1.mean",
+    "ratio_1.std",
+    "ratio_1.min",
+    "ratio_1.max",
+    "ratio_1.p2p",
+    "ratio_1.cv",
+    "ratio_2.mean",
+    "ratio_2.std",
+    "ratio_2.min",
+    "ratio_2.max",
+    "ratio_2.p2p",
+    "ratio_2.cv",
+    "ratio_3.mean",
+    "ratio_3.std",
+    "ratio_3.min",
+    "ratio_3.max",
+    "ratio_3.p2p",
+    "ratio_3.cv",
+    "imbalance.mean",
+    "imbalance.std",
+    "imbalance.min",
+    "imbalance.max",
+    "imbalance.p2p",
+    "imbalance.cv",
+    "neg_seq_proxy.mean",
+    "neg_seq_proxy.std",
+    "neg_seq_proxy.min",
+    "neg_seq_proxy.max",
+    "neg_seq_proxy.p2p",
+    "neg_seq_proxy.cv",
+    "imb_short_long_ratio",
+    "neg_short_long_ratio"
+  ],
+  "file_feature_summary": [
+    {
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+      "filename": "Noload_1%mu_Rf3.csv",
+      "imbalance_mean_window_mean": 0.018789925805882072,
+      "n_vectors": 272,
+      "neg_seq_proxy_mean_window_mean": 0.007940683258822854,
+      "severity_pct": 1,
+      "status": "faulty"
+    },
+    {
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+      "filename": "Noload_3%mu_Rf3.csv",
+      "imbalance_mean_window_mean": 0.01842150212372356,
+      "n_vectors": 272,
+      "neg_seq_proxy_mean_window_mean": 0.00787120913270904,
+      "severity_pct": 3,
+      "status": "faulty"
+    },
+    {
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+      "filename": "Noload_5%mu_Rf3.csv",
+      "imbalance_mean_window_mean": 0.02296711300215998,
+      "n_vectors": 272,
+      "neg_seq_proxy_mean_window_mean": 0.01007253290312068,
+      "severity_pct": 5,
+      "status": "faulty"
+    },
+    {
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv",
+      "filename": "Noload_healthy.csv",
+      "imbalance_mean_window_mean": 0.018046588928201244,
+      "n_vectors": 272,
+      "neg_seq_proxy_mean_window_mean": 0.007852717430194951,
+      "severity_pct": null,
+      "status": "healthy"
+    }
+  ],
+  "final_model_fit_summary": {
+    "label_balance": {
+      "negative": 544,
+      "positive": 544
+    },
+    "n_feature_vectors": 1088,
+    "severity_counts": {
+      "1%": 272,
+      "3%": 272,
+      "5%+": 272,
+      "healthy": 272
+    },
+    "train_files": [
+      "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+      "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+      "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+      "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+    ]
+  },
+  "healthy_stats": {
+    "imb_mean": 0.018418257367041658,
+    "imb_std": 0.0003771834319542,
+    "imb_threshold": 0.019549807662904258,
+    "k_sigma": 3.0,
+    "n_healthy_vectors": 544,
+    "neg_mean": 0.007896700344508904,
+    "neg_std": 4.835584859054885e-05,
+    "neg_threshold": 0.00804176789028055
+  },
+  "inference_latency_ms_median": 0.1615625,
+  "inventory": [
+    {
+      "file_index": 0,
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+      "filename": "Noload_1%mu_Rf3.csv",
+      "label": 0,
+      "load": "Noload",
+      "rf": 3,
+      "severity_pct": 1,
+      "status": "faulty"
+    },
+    {
+      "file_index": 1,
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+      "filename": "Noload_3%mu_Rf3.csv",
+      "label": 1,
+      "load": "Noload",
+      "rf": 3,
+      "severity_pct": 3,
+      "status": "faulty"
+    },
+    {
+      "file_index": 2,
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+      "filename": "Noload_5%mu_Rf3.csv",
+      "label": 1,
+      "load": "Noload",
+      "rf": 3,
+      "severity_pct": 5,
+      "status": "faulty"
+    },
+    {
+      "file_index": 3,
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv",
+      "filename": "Noload_healthy.csv",
+      "label": 0,
+      "load": "Noload",
+      "rf": null,
+      "severity_pct": null,
+      "status": "healthy"
+    }
+  ],
+  "lofo_folds": [
+    {
+      "confusion_matrix": {
+        "fn": 0,
+        "fp": 223,
+        "tn": 49,
+        "tp": 0
+      },
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+      "filename": "Noload_1%mu_Rf3.csv",
+      "healthy_stats": {
+        "imb_mean": 0.018046588928201244,
+        "imb_std": 8.322027177221551e-05,
+        "imb_threshold": 0.01829624974351789,
+        "k_sigma": 3.0,
+        "n_healthy_vectors": 272,
+        "neg_mean": 0.007852717430194951,
+        "neg_std": 2.4499575814165535e-05,
+        "neg_threshold": 0.007926216157637448
+      },
+      "k_sigma": 3.0,
+      "metric_name": "fpr",
+      "metric_value": 0.8198529411764706,
+      "n_vectors": 272,
+      "proba_fault_mean": 0.3914105859588023,
+      "selected_model_type": "ThresholdClassifier",
+      "severity_pct": 1,
+      "status": "faulty",
+      "test_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv"
+      ],
+      "train_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+      ]
+    },
+    {
+      "confusion_matrix": {
+        "fn": 272,
+        "fp": 0,
+        "tn": 0,
+        "tp": 0
+      },
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+      "filename": "Noload_3%mu_Rf3.csv",
+      "healthy_stats": {
+        "imb_mean": 0.018418257367041658,
+        "imb_std": 0.0003771834319542,
+        "imb_threshold": 0.019549807662904258,
+        "k_sigma": 3.0,
+        "n_healthy_vectors": 544,
+        "neg_mean": 0.007896700344508904,
+        "neg_std": 4.835584859054885e-05,
+        "neg_threshold": 0.00804176789028055
+      },
+      "k_sigma": 3.0,
+      "metric_name": "recall",
+      "metric_value": 0.0,
+      "n_vectors": 272,
+      "proba_fault_mean": 0.0,
+      "selected_model_type": "ThresholdClassifier",
+      "severity_pct": 3,
+      "status": "faulty",
+      "test_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv"
+      ],
+      "train_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+      ]
+    },
+    {
+      "confusion_matrix": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 0,
+        "tp": 272
+      },
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+      "filename": "Noload_5%mu_Rf3.csv",
+      "healthy_stats": {
+        "imb_mean": 0.018418257367041658,
+        "imb_std": 0.0003771834319542,
+        "imb_threshold": 0.019549807662904258,
+        "k_sigma": 3.0,
+        "n_healthy_vectors": 544,
+        "neg_mean": 0.007896700344508904,
+        "neg_std": 4.835584859054885e-05,
+        "neg_threshold": 0.00804176789028055
+      },
+      "k_sigma": 3.0,
+      "metric_name": "recall",
+      "metric_value": 1.0,
+      "n_vectors": 272,
+      "proba_fault_mean": 0.9998781942407123,
+      "selected_model_type": "ThresholdClassifier",
+      "severity_pct": 5,
+      "status": "faulty",
+      "test_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv"
+      ],
+      "train_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+      ]
+    },
+    {
+      "confusion_matrix": {
+        "fn": 0,
+        "fp": 0,
+        "tn": 272,
+        "tp": 0
+      },
+      "file_path": "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv",
+      "filename": "Noload_healthy.csv",
+      "healthy_stats": {
+        "imb_mean": 0.018789925805882072,
+        "imb_std": 3.6526869391123683e-05,
+        "imb_threshold": 0.018899506414055443,
+        "k_sigma": 3.0,
+        "n_healthy_vectors": 272,
+        "neg_mean": 0.007940683258822854,
+        "neg_std": 1.4399773180619197e-05,
+        "neg_threshold": 0.007983882578364711
+      },
+      "k_sigma": 3.0,
+      "metric_name": "fpr",
+      "metric_value": 0.0,
+      "n_vectors": 272,
+      "proba_fault_mean": 0.0,
+      "selected_model_type": "ThresholdClassifier",
+      "severity_pct": null,
+      "status": "healthy",
+      "test_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+      ],
+      "train_files": [
+        "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+        "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv"
+      ]
+    }
+  ],
+  "model_features_used": [
+    "imbalance.mean",
+    "neg_seq_proxy.mean"
+  ],
+  "model_path": "/Users/aniruddh/Desktop/rpi/motor_fault_model/model.joblib",
+  "model_size_bytes": 1036,
+  "n_files": 4,
+  "parse_failures": [],
+  "python_version": "3.13.2 (v3.13.2:4f8bb3947cf, Feb  4 2025, 11:51:10) [Clang 15.0.0 (clang-1500.3.9.4)]",
+  "seed": 42,
+  "selected_model": {
+    "k_sigma": 3.0,
+    "k_sigma_grid_scores": [
+      {
+        "evaluation": {
+          "confusion_matrix": {
+            "fn": 272,
+            "fp": 269,
+            "tn": 275,
+            "tp": 272
+          },
+          "per_severity": {
+            "1%": {
+              "fn": 0,
+              "fp": 269,
+              "fpr": 0.9889705882352942,
+              "n": 272,
+              "recall": null,
+              "tn": 3,
+              "tp": 0
+            },
+            "3%": {
+              "fn": 272,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 0.0,
+              "tn": 0,
+              "tp": 0
+            },
+            "5%+": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 1.0,
+              "tn": 0,
+              "tp": 272
+            },
+            "healthy": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": 0.0,
+              "n": 272,
+              "recall": null,
+              "tn": 272,
+              "tp": 0
+            }
+          }
+        },
+        "healthy_fpr": 0.0,
+        "k_sigma": 2.5,
+        "recall_5pct": 1.0,
+        "score": 1.0
+      },
+      {
+        "evaluation": {
+          "confusion_matrix": {
+            "fn": 272,
+            "fp": 223,
+            "tn": 321,
+            "tp": 272
+          },
+          "per_severity": {
+            "1%": {
+              "fn": 0,
+              "fp": 223,
+              "fpr": 0.8198529411764706,
+              "n": 272,
+              "recall": null,
+              "tn": 49,
+              "tp": 0
+            },
+            "3%": {
+              "fn": 272,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 0.0,
+              "tn": 0,
+              "tp": 0
+            },
+            "5%+": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 1.0,
+              "tn": 0,
+              "tp": 272
+            },
+            "healthy": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": 0.0,
+              "n": 272,
+              "recall": null,
+              "tn": 272,
+              "tp": 0
+            }
+          }
+        },
+        "healthy_fpr": 0.0,
+        "k_sigma": 3.0,
+        "recall_5pct": 1.0,
+        "score": 1.0
+      },
+      {
+        "evaluation": {
+          "confusion_matrix": {
+            "fn": 272,
+            "fp": 140,
+            "tn": 404,
+            "tp": 272
+          },
+          "per_severity": {
+            "1%": {
+              "fn": 0,
+              "fp": 140,
+              "fpr": 0.5147058823529411,
+              "n": 272,
+              "recall": null,
+              "tn": 132,
+              "tp": 0
+            },
+            "3%": {
+              "fn": 272,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 0.0,
+              "tn": 0,
+              "tp": 0
+            },
+            "5%+": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 1.0,
+              "tn": 0,
+              "tp": 272
+            },
+            "healthy": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": 0.0,
+              "n": 272,
+              "recall": null,
+              "tn": 272,
+              "tp": 0
+            }
+          }
+        },
+        "healthy_fpr": 0.0,
+        "k_sigma": 3.5,
+        "recall_5pct": 1.0,
+        "score": 1.0
+      },
+      {
+        "evaluation": {
+          "confusion_matrix": {
+            "fn": 272,
+            "fp": 74,
+            "tn": 470,
+            "tp": 272
+          },
+          "per_severity": {
+            "1%": {
+              "fn": 0,
+              "fp": 74,
+              "fpr": 0.27205882352941174,
+              "n": 272,
+              "recall": null,
+              "tn": 198,
+              "tp": 0
+            },
+            "3%": {
+              "fn": 272,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 0.0,
+              "tn": 0,
+              "tp": 0
+            },
+            "5%+": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": null,
+              "n": 272,
+              "recall": 1.0,
+              "tn": 0,
+              "tp": 272
+            },
+            "healthy": {
+              "fn": 0,
+              "fp": 0,
+              "fpr": 0.0,
+              "n": 272,
+              "recall": null,
+              "tn": 272,
+              "tp": 0
+            }
+          }
+        },
+        "healthy_fpr": 0.0,
+        "k_sigma": 4.0,
+        "recall_5pct": 1.0,
+        "score": 1.0
+      }
+    ],
+    "model_type": "ThresholdClassifier",
+    "selection_rule": "all_scores_tied_default_3.0"
+  },
+  "singleton_cells": [
+    {
+      "count": 1,
+      "severity_pct": 1,
+      "status": "faulty"
+    },
+    {
+      "count": 1,
+      "severity_pct": 3,
+      "status": "faulty"
+    },
+    {
+      "count": 1,
+      "severity_pct": 5,
+      "status": "faulty"
+    },
+    {
+      "count": 1,
+      "severity_pct": null,
+      "status": "healthy"
+    }
+  ],
+  "test_files": [],
+  "train_files": [
+    "/Users/aniruddh/Desktop/rpi/Noload_1%mu_Rf3.csv",
+    "/Users/aniruddh/Desktop/rpi/Noload_3%mu_Rf3.csv",
+    "/Users/aniruddh/Desktop/rpi/Noload_5%mu_Rf3.csv",
+    "/Users/aniruddh/Desktop/rpi/Noload_healthy.csv"
+  ]
+}
